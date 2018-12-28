@@ -1,0 +1,22 @@
+{
+    "name": "designbold/module-designboldtinymce",
+    "description": "Designbold design image button integration in TinyMCE.",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "DesignBold\\DesignBoldTinyMCE\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

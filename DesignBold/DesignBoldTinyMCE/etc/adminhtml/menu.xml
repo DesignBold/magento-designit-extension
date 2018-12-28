@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="DesignBold::top_level" module="DesignBold_DesignBoldTinyMCE" resource="Magento_Backend::content" sortOrder="2" title="DesignBold"/>
+		<add action="upload/index/index" id="DesignBold_DesignBoldTinyMCE::index_index" module="DesignBold_DesignBoldTinyMCE" parent="DesignBold::top_level" resource="DesignBold_DesignBoldTinyMCE::index_index" sortOrder="1" title="index index"/>
+	</menu>
+</config>

@@ -26,18 +26,20 @@
 namespace DesignBold\DesignBoldTinyMCE\Model;
 
 use DesignBold\DesignBoldTinyMCE\Api\UploadImageManagementInterface;
-use Zend\Http\Request as HttpRequest;
 
 class UploadImageManagement implements UploadImageManagementInterface
 {
+    protected $_storeManager;
     protected $_directoryList;
     protected $_file;
 
     public function __construct(
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Framework\Filesystem\DirectoryList $directoryList,
         \Magento\Framework\Filesystem\Io\File $file
     )
     {
+        $this->_storeManager = $storeManager;
         $this->_directoryList = $directoryList;
         $this->_file = $file;
     }
@@ -49,6 +51,7 @@ class UploadImageManagement implements UploadImageManagementInterface
      */
     public function postUploadImage($post_url)
     {
+        $baseUrl = $this->_storeManager->getStore()->getBaseUrl() . "pub/media/";
         $post_url = trim(addslashes($post_url));
         $file_name = basename(parse_url($post_url, PHP_URL_PATH));
 
@@ -78,7 +81,7 @@ class UploadImageManagement implements UploadImageManagementInterface
             $newName = $this->renameDuplicates($pdfPath, $file_name);
 
             if (file_put_contents($pdfPath . $newName, $contentFile)) {
-                $obj_data->image_info = array('url' => $filePath . "/" . $newName);
+                $obj_data->image_info = array('url' => $baseUrl . $filePath . "/" . $newName);
             }
 
             header("Content-type: application/json; charset=utf-8");

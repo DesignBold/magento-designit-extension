@@ -526,7 +526,7 @@ window.DBSDK = {
 
                 if (rich) {
                     var result = JSON.parse(JSON.parse(this.responseText));
-                    tinyMCE.activeEditor.selection.setContent('<img src="http://magento.test:8080/pub/media/' + result.image_info.url + '" alt="" class="img-responsive">');
+                    tinyMCE.activeEditor.selection.setContent('<img src="' + result.image_info.url + '" alt="" class="img-responsive">');
                 }
 
                 // Hidden notification

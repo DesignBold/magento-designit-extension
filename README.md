@@ -2,7 +2,7 @@
 
 DesignIt Magento extension by [DesignBold](https://designbold.com) is build to edit images right when you see them. It can be integration into TinyMCE editor. 
 
-For more information, check out the [proposal repo](https://github.com/designboldgit/magento-designit-extension).
+For more information, check out the [proposal repo](https://github.com/DesignBold/magento-designit-extension).
 
 ## Introduce
 
